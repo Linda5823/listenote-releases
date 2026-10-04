@@ -1,0 +1,65 @@
+Listenote License
+
+Copyright (c) 2026 Guiling Huang. All rights reserved.
+
+Listenote (the "Software") is proprietary software. It is licensed to you, not sold.
+By installing or using the Software, you agree to the terms below.
+
+1. Permitted use
+
+   You may download, install and use the Software free of charge, for personal or
+   commercial purposes, on any number of computers you own or control.
+
+2. Restrictions
+
+   Unless the copyright holder has given you written permission, you may not:
+
+   a. copy, modify, translate or create derivative works of the Software or of its
+      source code, other than the copies made by installing and running it;
+   b. distribute, publish, sell, rent, lend or sublicense the Software, including
+      offering its installers for download from any other place;
+   c. reverse engineer, decompile or disassemble the Software, except to the extent
+      that applicable law expressly permits it despite this restriction;
+   d. remove or alter any copyright, license or attribution notice in the Software.
+
+3. Source code
+
+   The source code may be publicly viewable. Being able to view it does not grant any
+   right to use, copy, modify or distribute it beyond what section 1 allows.
+
+4. Third-party components
+
+   The Software includes open-source components, such as whisper.cpp, Tauri and React,
+   and downloads OpenAI Whisper speech models on request. These components and models
+   are licensed under their own terms, such as the MIT License and the Apache License
+   2.0. Those terms apply to the components themselves, and nothing in this license
+   limits the rights they grant.
+
+5. Ownership
+
+   The copyright holder keeps all rights, title and interest in the Software that are
+   not expressly granted to you in this license.
+
+6. No warranty
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+   PARTICULAR PURPOSE, ACCURACY OF TRANSCRIPTIONS AND NONINFRINGEMENT.
+
+7. Limitation of liability
+
+   TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
+   LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING LOSS OF DATA OR
+   RECORDINGS, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
+   OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+8. Your responsibility
+
+   You are responsible for making sure that what you record, and how you use the
+   recordings and transcripts, complies with the laws that apply to you, including
+   laws on consent to recording and on copyright.
+
+9. Termination
+
+   This license ends automatically if you break any of its terms. When it ends, you
+   must stop using the Software and delete all copies of it.
