@@ -60,8 +60,9 @@ recordings and models.
 ## Speech models
 
 Models are downloaded from [Hugging Face](https://huggingface.co/ggerganov/whisper.cpp)
-the first time you choose them, checked against their published SHA-256 hashes, and can be
-deleted again in Settings.
+the first time you choose them, or from the [hf-mirror.com](https://hf-mirror.com) mirror if
+Hugging Face cannot be reached, as is common in mainland China. They are checked against
+their published SHA-256 hashes, and can be deleted again in Settings.
 
 | Model | Size | How text appears | Suggested for |
 |---|---|---|---|

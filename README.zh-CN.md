@@ -45,7 +45,7 @@ Listenote 有两个版本，可以同时安装，共用同一批录音和模型�
 
 ## 语音模型
 
-模型在你第一次选用时从 [Hugging Face](https://huggingface.co/ggerganov/whisper.cpp) 下载，
+模型在你第一次选用时从 [Hugging Face](https://huggingface.co/ggerganov/whisper.cpp) 下载；连不上时（在中国大陆很常见）会自动改用国内镜像 [hf-mirror.com](https://hf-mirror.com)。
 下载后会用官方公布的 SHA-256 校验，也可以在设置里删除。
 
 | 模型 | 大小 | 文字出现方式 | 推荐用于 |
