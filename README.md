@@ -15,7 +15,7 @@ Transcription runs entirely on your computer: no cloud AI, no account and no per
 fees, and nothing you record is uploaded. You only need the internet once, to download a
 speech model; after that, recording and transcription work offline.
 
-**[Download the latest version](../../releases/latest)**
+**[Download the latest version](../../releases/latest)** (the `.exe` file under Assets)
 
 ## What you can use it for
 
@@ -60,7 +60,9 @@ speech model; after that, recording and transcription work offline.
 
 ## Getting started
 
-1. [Download](../../releases/latest) the installer, and run it.
+1. On the [latest release](../../releases/latest) page, under **Assets**, download
+   `Listenote_<version>_x64-setup.exe` and run it. You do not need the **Source code**
+   files, which GitHub adds to every release.
 2. Because the installer is not code-signed, Windows may warn you twice:
    - Microsoft Edge may say the file "isn't commonly downloaded". In the downloads list,
      point to the file, click **...** (More actions), then **Keep**, then **Show more**,
@@ -100,11 +102,15 @@ the first time you choose them, or from the [hf-mirror.com](https://hf-mirror.co
 Hugging Face cannot be reached, as is common in mainland China. They are checked against
 their published SHA-256 hashes, and can be deleted again in Settings.
 
-| Model | Size | How text appears | Suggested for |
+| Model | Size | Default for | Text appears |
 |---|---|---|---|
-| SenseVoice Small | 228 MB | Within a few seconds, with a gray first guess; Chinese, English and Japanese only | Chinese, English and Japanese |
-| Whisper small | 465 MB | In passages, about every 30 seconds; more accurate | Korean, Spanish, French, German and Portuguese |
-| Whisper base | 141 MB | Within a few seconds, with a gray first guess; less accurate | A smaller, faster choice for any language |
+| SenseVoice&nbsp;Small | 228&nbsp;MB | Chinese, English, Japanese | Within seconds |
+| Whisper&nbsp;small | 465&nbsp;MB | Korean, Spanish, French, German, Portuguese | About every 30 seconds |
+| Whisper&nbsp;base | 141&nbsp;MB | None; works for every language, smaller download | Within seconds |
+
+Models that show text within seconds first show a gray guess, then the final text.
+SenseVoice Small only transcribes Chinese, English and Japanese; Whisper base is less
+accurate.
 
 In testing, SenseVoice Small was about as accurate as Whisper small for English and more
 accurate for Chinese and Japanese, while fast enough to show text within seconds. Like the

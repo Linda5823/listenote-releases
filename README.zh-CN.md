@@ -8,7 +8,7 @@ Listenote 是一款轻量的 Windows 录音和实时转录工具。它能录下�
 
 转录完全在你的电脑上进行：不调用云端 AI，不需要账号，也不按分钟收费；音频和文字都不会上传。只有第一次下载转录模型时需要联网，之后录音和转录都可以离线使用。
 
-**[下载最新版本](../../releases/latest)**
+**[下载最新版本](../../releases/latest)**（下载 Assets 里的 `.exe` 文件）
 
 ## 适用场景
 
@@ -36,7 +36,7 @@ Listenote 是一款轻量的 Windows 录音和实时转录工具。它能录下�
 
 ## 开始使用
 
-1. [下载](../../releases/latest)安装包并运行。
+1. 打开[最新版本](../../releases/latest)页面，从 **Assets** 下面下载 `Listenote_版本号_x64-setup.exe` 并运行。不需要下载 **Source code**，那是 GitHub 给每个版本自动附带的。
 2. 因为安装包没有代码签名，Windows 可能会提示两次：
    - Edge 浏览器可能提示这个文件"不常被下载"。在下载列表里把鼠标移到这个文件上，点 **…**（更多操作），再点 **保留**，然后点 **显示更多**，最后点 **仍然保留**。
    - 运行安装包时，Windows 可能会提示"Windows 已保护你的电脑"。点 **更多信息**，再点 **仍要运行**。
@@ -62,11 +62,13 @@ Listenote 是一款轻量的 Windows 录音和实时转录工具。它能录下�
 模型在你第一次选用时从 Hugging Face 下载（[Whisper](https://huggingface.co/ggerganov/whisper.cpp)、[SenseVoice](https://huggingface.co/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17)）；连不上时（在中国大陆很常见）会自动改用国内镜像 [hf-mirror.com](https://hf-mirror.com)。
 下载后会用官方公布的 SHA-256 校验，也可以在设置里删除。
 
-| 模型 | 大小 | 文字出现方式 | 推荐用于 |
+| 模型 | 大小 | 默认用于 | 出字速度 |
 |---|---|---|---|
-| SenseVoice Small | 228 MB | 几秒内出现，先显示灰色的初步结果；只支持中文、英语、日语 | 中文、英语、日语 |
-| Whisper small | 465 MB | 按段落出现，大约每 30 秒一段；更准确 | 韩语、西班牙语、法语、德语、葡萄牙语 |
-| Whisper base | 141 MB | 几秒内出现，先显示灰色的初步结果；准确率较低 | 任何语言下更小、更快的选择 |
+| SenseVoice&nbsp;Small | 228&nbsp;MB | 中文、英语、日语 | 几秒内 |
+| Whisper&nbsp;small | 465&nbsp;MB | 韩语、西班牙语、法语、德语、葡萄牙语 | 约每 30 秒一段 |
+| Whisper&nbsp;base | 141&nbsp;MB | 不默认使用；支持所有语言，下载更小 | 几秒内 |
+
+几秒内出字的模型会先显示灰色的初步结果，再换成最终文字。SenseVoice Small 只支持中文、英语和日语；Whisper base 准确率较低。
 
 测试中，SenseVoice Small 转录英语的准确率和 Whisper small 相当，中文和日语更准，而且速度快，几秒内就能出字。
 和 Whisper 一样，冷门的人名、术语仍然常常会转错。
