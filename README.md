@@ -9,12 +9,27 @@ computer, so nothing you record is uploaded.
 
 **[Download the latest version](../../releases/latest)**
 
+## What you can use it for
+
+- **Meetings**: see the text of online meetings and calls as they happen, and export it
+  afterwards to write up notes. Turn on the microphone to include what you say.
+- **Online classes and lectures**: follow along in text, and look back at anything you
+  missed.
+- **Learning a language**: read each sentence as you hear it in videos, podcasts and films
+  in English, Japanese, Spanish and the other supported languages.
+- **Practicing interviews and talks**: turn on the microphone, answer questions or give
+  your talk out loud, then read back what you said.
+- **Podcasts, blogs and videos**: play back your own episode or video, or speak your ideas
+  into the microphone, and get a timestamped text draft for show notes, articles or
+  subtitles.
+
 ## Features
 
 - **Records system audio**: whatever plays through your speakers or headphones, with your
   microphone mixed in if you turn it on.
-- **Live transcription on your device** with OpenAI's Whisper speech models, through
-  whisper.cpp.
+- **Live transcription on your device** with Alibaba's SenseVoice model for Chinese,
+  English and Japanese, through sherpa-onnx, and OpenAI's Whisper speech models for the
+  other languages, through whisper.cpp.
 - **Eight spoken languages**: English, Chinese, Spanish, French, German, Japanese, Korean
   and Portuguese.
 - **Saved as you record**: the audio and the transcript are written to disk continuously,
@@ -25,50 +40,61 @@ computer, so nothing you record is uploaded.
 - **Interface in the same eight languages**, following your Windows display language
   unless you choose another in Settings.
 
-## Editions
-
-Listenote comes in two editions. They can be installed side by side and share the same
-recordings and models.
-
-| | Listenote | Listenote GPU |
-|---|---|---|
-| Transcribes with | The processor (CPU) | The graphics card, through Vulkan |
-| Speech models | Whisper base, Whisper small | Whisper base, Whisper small, Whisper large-v3-turbo |
-| Best for | Any recent PC | PCs with a graphics card or a recent integrated GPU, when accuracy matters most |
-| Installer size | About 2 MB | About 7 MB |
-
 ## System requirements
 
 - Windows 10 or Windows 11, 64-bit.
 - A processor with AVX2 support, which most PCs from 2015 onward have. Some low-cost
   Celeron and Pentium processors lack it and cannot run transcription.
-- Listenote GPU only: a graphics driver with Vulkan support. Up-to-date drivers for most
-  Intel, AMD and NVIDIA graphics from recent years include it.
-- Disk space for one or more speech models (141 MB to 547 MB) and for recordings, which
+- Disk space for one or more speech models (141 MB to 465 MB) and for recordings, which
   take roughly 0.6 to 0.7 GB per hour at Standard quality.
 
 ## Getting started
 
-1. [Download](../../releases/latest) the installer for the edition you want, and run it.
+1. [Download](../../releases/latest) the installer, and run it.
 2. Windows may show "Windows protected your PC", because the installer is not code-signed.
    Click **More info**, then **Run anyway**.
-3. Open Listenote, click **Settings**, choose the spoken language, and download the
-   suggested speech model. This happens once; transcription then works offline.
-4. Click **Start**. Turn on the microphone if you want your own voice included.
-5. When you are done, click **Stop**, then **Export TXT** to save the transcript.
+3. Open Listenote and choose the spoken language. The first time, a red notice says the
+   speech model has not been downloaded yet. Click **Download model** in the notice, or the
+   **Settings** button, the gear at the top right.
+
+   <img src="screenshots/download-notice.png" alt="The main window, with the notice that the speech model has not been downloaded and its Download model button" width="600">
+
+4. Under **Transcription model**, click **Download**. This happens once for each model;
+   transcription then works offline.
+
+   <img src="screenshots/download-model.png" alt="Settings, with the Download button for the speech model" width="600">
+
+   The speech model is safe to download:
+   - It is a data file holding what the model has learned, not a program, and it cannot
+     run by itself.
+   - It comes from the public model pages on Hugging Face listed under
+     [Speech models](#speech-models), or from the hf-mirror.com copy of them.
+   - Listenote checks the file against its published SHA-256 hash and discards it if even
+     one byte differs, so a damaged or altered file is never used.
+   - It is saved only in the `Models` folder described under
+     [Where your files are](#where-your-files-are), and can be deleted in Settings at any
+     time.
+
+5. Click **Start**. Turn on the microphone if you want your own voice included.
+6. When you are done, click **Stop**, then **Export TXT** to save the transcript.
 
 ## Speech models
 
-Models are downloaded from [Hugging Face](https://huggingface.co/ggerganov/whisper.cpp)
+Models are downloaded from Hugging Face ([Whisper](https://huggingface.co/ggerganov/whisper.cpp),
+[SenseVoice](https://huggingface.co/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17))
 the first time you choose them, or from the [hf-mirror.com](https://hf-mirror.com) mirror if
 Hugging Face cannot be reached, as is common in mainland China. They are checked against
 their published SHA-256 hashes, and can be deleted again in Settings.
 
 | Model | Size | How text appears | Suggested for |
 |---|---|---|---|
-| Whisper base | 141 MB | Within a few seconds, with a gray first guess | Most languages |
-| Whisper small | 465 MB | In passages, about every 30 seconds; more accurate | Chinese, Japanese and Korean in Listenote |
-| Whisper large-v3-turbo | 547 MB | In passages, about every 30 seconds; most accurate | Chinese, Japanese and Korean in Listenote GPU |
+| SenseVoice Small | 228 MB | Within a few seconds, with a gray first guess; Chinese, English and Japanese only | Chinese, English and Japanese |
+| Whisper small | 465 MB | In passages, about every 30 seconds; more accurate | Korean, Spanish, French, German and Portuguese |
+| Whisper base | 141 MB | Within a few seconds, with a gray first guess; less accurate | A smaller, faster choice for any language |
+
+In testing, SenseVoice Small was about as accurate as Whisper small for English and more
+accurate for Chinese and Japanese, while fast enough to show text within seconds. Like the
+Whisper models, it often gets rare names and terms wrong.
 
 Listenote remembers the model you choose for each spoken language.
 
@@ -94,8 +120,11 @@ asked for.
 ## Good to know
 
 - If the computer cannot transcribe as fast as the audio plays, Listenote skips some
-  audio to stay current and marks the skipped parts in the transcript. A faster model,
-  or Listenote GPU, avoids this.
+  audio to stay current and marks the skipped parts in the transcript. A faster model
+  avoids this.
+- Each version can start new recordings until a date shown in Settings, about six months
+  after it was built. After that, download the latest version; past recordings can still be
+  opened and exported.
 - Accuracy depends on the audio: clear speech with little background noise works best.
 - Please make sure you are allowed to record what you record, and follow the consent and
   copyright rules that apply where you are.
@@ -106,5 +135,10 @@ Listenote is free to use but is not open source; this repository only hosts its
 installers. See [LICENSE](LICENSE) for the terms.
 
 It is built on open-source software, including [whisper.cpp](https://github.com/ggerganov/whisper.cpp)
-(MIT), [Tauri](https://tauri.app) (MIT or Apache 2.0) and [React](https://react.dev) (MIT),
-and uses OpenAI's [Whisper](https://github.com/openai/whisper) models (MIT).
+(MIT), [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx) (Apache 2.0),
+[ONNX Runtime](https://github.com/microsoft/onnxruntime) (MIT), [Tauri](https://tauri.app)
+(MIT or Apache 2.0) and [React](https://react.dev) (MIT). It uses OpenAI's
+[Whisper](https://github.com/openai/whisper) models (MIT), and the
+[SenseVoice Small](https://github.com/FunAudioLLM/SenseVoice) model by Alibaba Group's
+FunAudioLLM team, under the
+[FunASR Model Open Source License](https://github.com/modelscope/FunASR/blob/main/MODEL_LICENSE).
