@@ -51,8 +51,12 @@ computer, so nothing you record is uploaded.
 ## Getting started
 
 1. [Download](../../releases/latest) the installer, and run it.
-2. Windows may show "Windows protected your PC", because the installer is not code-signed.
-   Click **More info**, then **Run anyway**.
+2. Because the installer is not code-signed, Windows may warn you twice:
+   - Microsoft Edge may say the file "isn't commonly downloaded". In the downloads list,
+     point to the file, click **...** (More actions), then **Keep**, then **Show more**,
+     then **Keep anyway**.
+   - When you run it, Windows may show "Windows protected your PC". Click **More info**,
+     then **Run anyway**.
 3. Open Listenote and choose the spoken language. The first time, a red notice says the
    speech model has not been downloaded yet. Click **Download model** in the notice, or the
    **Settings** button, the gear at the top right.
