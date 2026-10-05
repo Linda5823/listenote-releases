@@ -66,7 +66,7 @@ speech model; after that, recording and transcription work offline.
 2. Because the installer is not code-signed, Windows may warn you twice:
    - Microsoft Edge may say the file "isn't commonly downloaded". In the downloads list,
      point to the file, click **...** (More actions), then **Keep**, then **Show more**,
-     then **Keep anyway**.
+     then **Keep anyway**. Downloading with Chrome usually avoids this warning.
    - When you run it, Windows may show "Windows protected your PC". Click **More info**,
      then **Run anyway**.
 3. Open Listenote and choose the spoken language. The first time, a red notice says the
@@ -145,6 +145,11 @@ asked for.
 - Each version can start new recordings until a date shown in Settings, about six months
   after it was built. After that, download the latest version; past recordings can still be
   opened and exported.
+- To check that an installer is complete and unchanged, compare its SHA-256 hash with the
+  one shown next to it under Assets on the release page; letter case does not matter. In
+  PowerShell, run `Get-FileHash` with the installer's path, for example
+  `Get-FileHash $HOME\Downloads\Listenote_0.2.0_x64-setup.exe`. This matters most if you got
+  the installer from somewhere other than the release page.
 - Accuracy depends on the audio: clear speech with little background noise works best.
 - Please make sure you are allowed to record what you record, and follow the consent and
   copyright rules that apply where you are.
