@@ -2,10 +2,18 @@
 
 # Listenote
 
-Listenote records the audio playing on your Windows computer and shows a live transcript
-while you listen. Online classes, meetings, podcasts, videos: press Start, follow along,
-and keep both the recording and the text for later. Speech is transcribed on your own
-computer, so nothing you record is uploaded.
+Listenote is a lightweight Windows app that records audio and transcribes it live. It
+records whatever plays on your computer, and can add your own voice from the microphone
+at the same time.
+
+Press Start and read the transcript as you listen. The recording and the text are saved on
+your computer as you go, so you can read them again or export them as TXT at any time. At
+Standard quality one recording can run for about 6 hours, so long lectures and meetings fit
+in one go, and there is no limit on how many recordings you make.
+
+Transcription runs entirely on your computer: no cloud AI, no account and no per-minute
+fees, and nothing you record is uploaded. You only need the internet once, to download a
+speech model; after that, recording and transcription work offline.
 
 **[Download the latest version](../../releases/latest)**
 
@@ -35,6 +43,8 @@ computer, so nothing you record is uploaded.
 - **Saved as you record**: the audio and the transcript are written to disk continuously,
   so even if the app or the computer stops unexpectedly, the recording is kept up to the
   last few seconds.
+- **Long recordings**: one recording can run for about 6 hours at Standard quality, or
+  about 3 hours at High precision, and there is no limit on how many you make.
 - **Export to TXT** with timestamps, and reopen any past recording later to read or
   export it again.
 - **Interface in the same eight languages**, following your Windows display language
